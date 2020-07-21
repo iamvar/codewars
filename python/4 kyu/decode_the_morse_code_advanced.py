@@ -89,3 +89,15 @@ def find_time_unit(bits: str) -> int:
         _min = count
 
     return _min
+
+
+# best solution
+def decode_bits_best(bits):
+    import re
+    bits = bits.strip('0')
+
+    # find the least amount of occurrences of either a 0 or 1, and that is the time hop
+    unit = min(len(m) for m in re.findall(r'1+|0+', bits))
+
+    # hop through the bits and translate to morse
+    return bits[::unit].replace('111', '-').replace('1', '.').replace('0'*7, '   ').replace('000', ' ').replace('0', '')
