@@ -11,7 +11,8 @@ declare(strict_types=1);
 //'abba' & 'abca' == false
 //Write a function that will find all the anagrams of a word from a list. You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none. For example:
 
-function anagrams(string $word, array $words): array {
+function anagrams(string $word, array $words): array
+{
     $main = str_split($word);
     sort($main);
     return array_values(array_filter($words, function ($w) use ($main) {
@@ -19,4 +20,18 @@ function anagrams(string $word, array $words): array {
         sort($compare);
         return $compare === $main;
     }));
+}
+
+//best solution
+function anagrams_best(string $word, array $words): array
+{
+    $char = count_chars($word, 1);
+    $res = [];
+
+    foreach ($words as $elem) {
+        if (count_chars($elem, 1) == $char) {
+            $res[] = $elem;
+        }
+    }
+    return $res;
 }
