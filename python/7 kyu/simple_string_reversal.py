@@ -10,8 +10,14 @@
 # solve("your code rocks") = "skco redo cruoy"
 # solve("codewars") = "srawedoc"
 
+
 def solve(s):
     res = s[::-1].replace(' ', '')
     for i in (i for i, x in enumerate(s) if x.isspace()):
         res = res[:i] + ' ' + res[i:]
     return res
+
+
+def solve_best(s):
+    r = reversed(s.replace(' ', ''))
+    return ''.join(c if c == ' ' else next(r) for c in s)
