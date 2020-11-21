@@ -11,3 +11,7 @@ def snail(map):
     if len(map) <= 1:
         return next(iter(map), [])
     return map.pop(0) + [row.pop() for row in map] + map.pop()[::-1] + [row.pop(0) for row in map[::-1]] + snail(map)
+
+
+def snail_best(map):
+    return list(map.pop(0)) + snail_best(list(zip(*map))[::-1]) if map else []
