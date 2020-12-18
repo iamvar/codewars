@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -11,7 +12,8 @@ declare(strict_types=1);
  * pyramid(3) => [ [1], [1, 1], [1, 1, 1] ]
  * Note: the subarrays should be filled with 1s
  */
-function pyramid($n) {
+function pyramid($n)
+{
     $res = [];
     for ($i = 1; $i <= $n; $i++) {
         $res[] = array_fill(0, $i, 1);

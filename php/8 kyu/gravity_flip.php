@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -22,7 +23,8 @@ declare(strict_types=1);
  * flip('R', [3, 2, 1, 2])    =>  [1, 2, 2, 3]
  * flip('L', [1, 4, 5, 3, 5]) =>  [5, 5, 4, 3, 1]
  */
-function flip(string $dir, array $arr): array {
-    $dir === 'R' ? sort($arr): rsort($arr);
+function flip(string $dir, array $arr): array
+{
+    $dir === 'R' ? sort($arr) : rsort($arr);
     return $arr;
 }

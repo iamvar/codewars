@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -20,8 +21,8 @@ declare(strict_types=1);
  * The second one will receive a string with a factorial representation and produce the decimal representation.
  * Given numbers will always be positive.
  */
-
-function dec2FactString($nb) {
+function dec2FactString($nb)
+{
     $res = '';
     $i = 1;
     $mapping = getMapping();
@@ -34,7 +35,8 @@ function dec2FactString($nb) {
     return $res;
 }
 
-function factString2Dec($str) {
+function factString2Dec($str)
+{
     $res = 0;
     $multiply = 1;
     $mapping = array_flip(getMapping());
@@ -46,6 +48,7 @@ function factString2Dec($str) {
     return $res;
 }
 
-function getMapping() {
-    return array_merge(range(0, 9),  range('A', 'Z'));
+function getMapping()
+{
+    return array_merge(range(0, 9), range('A', 'Z'));
 }

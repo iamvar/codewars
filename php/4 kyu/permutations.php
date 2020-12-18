@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -12,7 +13,8 @@ declare(strict_types=1);
  * permutations('ab'); // => ['ab', 'ba']
  * permutations('aabb'); // => ['aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa']
  */
-function permutations(string $s): array {
+function permutations(string $s): array
+{
     if (strlen($s) <= 1) {
         return [$s];
     }

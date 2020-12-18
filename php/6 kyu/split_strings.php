@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -12,7 +13,8 @@ declare(strict_types=1);
  * solution('abc') // should return ['ab', 'c_']
  * solution('abcdef') // should return ['ab', 'cd', 'ef']
  */
-function solution(string $str) {
+function solution(string $str)
+{
     if (strlen($str) & 1) {
         $str .= '_';
     }

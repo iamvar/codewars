@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * @link https://www.codewars.com/kata/weight-for-weight
  * My friend John and I are members of the "Fat to Fit Club (FFC)".
@@ -20,9 +23,10 @@
  * it may happen that the input string have leading, trailing whitespaces and more than a unique whitespace between two consecutive numbers
  * Don't modify the input
  */
-function orderWeight($str) {
+function orderWeight($str)
+{
     $nums = preg_split('/\D/', $str, -1, PREG_SPLIT_NO_EMPTY);
-    usort($nums, static function ($a, $b){
+    usort($nums, static function ($a, $b) {
         return (array_sum(str_split($a)) - array_sum(str_split($b))) ?: strcmp($a, $b);
     });
     return implode(' ', $nums);

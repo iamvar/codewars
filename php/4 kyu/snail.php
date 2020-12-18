@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -10,7 +11,8 @@ declare(strict_types=1);
  *          [7,8,9]]
  * snail(array) #=> [1,2,3,6,9,8,7,4,5]
  */
-function snail(array $array): array {
+function snail(array $array): array
+{
     $start = array_shift($array);
     $reverse = array_reverse(array_pop($array) ?? []);
     $edge = [];
