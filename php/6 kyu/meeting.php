@@ -15,7 +15,7 @@ declare(strict_types=1);
  * "(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)"
  * It can happen that in two distinct families with the same family name two people have the same first name too.
  */
-function meeting($s)
+function meeting(string $s): string
 {
     preg_match_all("|([^:]+):([^;]+);?|", strtoupper($s), $guests, PREG_SET_ORDER);
     usort($guests, static function ($a, $b) {
@@ -26,4 +26,13 @@ function meeting($s)
     return array_reduce($guests, static function ($carry, $data) {
         return $carry . "({$data[2]}, {$data[1]})";
     }, '');
+}
+
+function meeting_better_solution(string $s): string {
+    $result = array_map(static function($pair) {
+        [$name, $surname] = explode(':', $pair);
+        return "({$surname}, {$name})";
+    }, explode(';', strtoupper($s)));
+    sort($result);
+    return implode($result);
 }
