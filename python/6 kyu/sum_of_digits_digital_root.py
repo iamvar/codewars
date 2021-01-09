@@ -13,3 +13,6 @@
 
 def digital_root(n):
     return 0 if n == 0 else (n - 1) % 9 + 1
+
+def digital_root_better(n):
+    return n % 9 or n and 9
