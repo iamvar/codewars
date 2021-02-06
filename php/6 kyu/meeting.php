@@ -28,8 +28,9 @@ function meeting(string $s): string
     }, '');
 }
 
-function meeting_better_solution(string $s): string {
-    $result = array_map(static function($pair) {
+function meeting_better_solution(string $s): string
+{
+    $result = array_map(static function ($pair) {
         [$name, $surname] = explode(':', $pair);
         return "({$surname}, {$name})";
     }, explode(';', strtoupper($s)));

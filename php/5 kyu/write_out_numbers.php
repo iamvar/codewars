@@ -31,6 +31,7 @@ declare(strict_types=1);
  * number2words(99999)  ==>  "ninety-nine thousand nine hundred ninety-nine"
  * number2words(888888)  ==>  "eight hundred eighty-eight thousand eight hundred eighty-eight"
  */
+
 const DIC = [
     0 => 'zero',
     1 => 'one',

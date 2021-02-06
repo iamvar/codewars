@@ -9,7 +9,8 @@ declare(strict_types=1);
  * Use the Node::getNext() instance method to get the following node.
  * Note: do NOT mutate the nodes!
  */
-function loop_size(Node $node): int {
+function loop_size(Node $node): int
+{
     $i = 1;
     $chain = [spl_object_id($node) => $i];
     while (!isset($chain[$key = spl_object_id($node = $node->getNext())])) {

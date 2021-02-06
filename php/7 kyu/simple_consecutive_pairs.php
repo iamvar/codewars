@@ -13,7 +13,8 @@ declare(strict_types=1);
  * --the fourth pair is (7,6), also consecutive. Count = 3.
  * --the last digit has no pair, so we ignore.
  */
-function pairs(array $arr) : int {
+function pairs(array $arr): int
+{
     return array_reduce(
         array_chunk($arr, 2),
         static fn($res, $pair) => max($pair) - min($pair) === 1 ? ++$res : $res ?? 0

@@ -10,8 +10,8 @@ declare(strict_types=1);
  * Write a solveTheMystery function that successfully does this for any class name that is passed into it.
  * Note that the exception must be thrown from within the given class' internal logic.
  * In other words: a throw keyword already part of its code must be the origin of the exception.
- * There is some fairly devious trickery up ahead, but if you have a good general approach that passes the example tests,
- * you should be able to beat this kata.
+ * There is some fairly devious trickery up ahead,
+ * but if you have a good general approach that passes the example tests, you should be able to beat this kata.
  * One hint: this will require some fairly extensive knowledge of PHP language specific features.
  */
 function solveTheMystery(string $mystery)
