@@ -32,4 +32,3 @@ function find_number(array $a): int
     $n = count($a) + 1;
     return $n * ($n + 1) / 2 - array_sum($a);
 }
-
